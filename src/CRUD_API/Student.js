@@ -1,13 +1,14 @@
 import { useContext } from "react"
 import { Store } from "./StoreComponents"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import './Students.css'
 
 export function Student(){
 const contextData=useContext(Store)
+const Navi=useNavigate()
 console.log(contextData.data)
 return(<>
-<button >Add new Student</button>
+<button onClick={()=>Navi('/newstudent')} >Add new Student</button>
 <div className="table_container">
     <table style={{ width: "50%",   borderCollapse: "collapse"}}>
         <thead>

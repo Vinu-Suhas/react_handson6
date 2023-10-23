@@ -6,6 +6,7 @@ import { Contacts } from "./Contact";
 import { Store } from "./StoreComponents";
 import { EditStudent } from "./EditStudent";
 import './RouterCompo.css'
+import { NewStudent } from "./NewStudents";
 
 export function RouterComponents() {
   // const Navi=useNavigate()
@@ -158,7 +159,9 @@ export function RouterComponents() {
          
           <Route path="/contacts" element={<Contacts />}/>
           <Route path="/editStudent/:id" element={<Store.Provider value={{data: studentData,setData:setStudentData}}><EditStudent/> </Store.Provider>}/>
-           
+          <Route path="/newstudent" element={           <Store.Provider  value={{data: studentData,setData:setStudentData}}>
+            <NewStudent/>
+           </Store.Provider>}/>
           
         </Routes>
       </BrowserRouter>
